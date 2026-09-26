@@ -35,14 +35,13 @@ export function Header({
         {/* Brand Console Logo */}
         <div className="flex items-center gap-3">
           <div className="relative flex items-center justify-center w-11 h-11 rounded-2xl bg-amber-400 border-2 border-stone-800 shadow-[0_4px_0_0_#292524] text-stone-900 font-black text-xl">
-            #
-            <div className="absolute -top-1 -end-1 w-3.5 h-3.5 rounded-full bg-rose-500 border-2 border-stone-900" />
+            😎
           </div>
 
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-xl sm:text-2xl font-black tracking-tight text-stone-900 dark:text-white">
-                POCKET <span style={{ color: settings.xColor }}>TAC-TOE</span>
+                <span style={{ color: settings.xColor }}>TIC-</span><span style={{ color: settings.oColor }}>TAC</span><span style={{ color: settings.xColor }}>-TOE</span>
               </h1>
               <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-stone-900 border border-stone-800 shadow-sm">
                 TACTILE

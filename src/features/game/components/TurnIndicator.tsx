@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import React from "react";
-import { Bot, Sparkles, Trophy, User } from "lucide-react";
+import { Bot, RotateCcw, Trophy, User } from "lucide-react";
 import { useSettings } from "@/features/customization/context/SettingsContext";
 import { GameMode, GameStatus, Player } from "../types/game.types";
 
@@ -69,7 +69,7 @@ export function TurnIndicator({
           onClick={onReset}
           className="flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-black text-white bg-stone-900 hover:bg-stone-800 rounded-2xl border-b-4 border-black active:border-b-0 active:translate-y-1 shadow-md transition-all duration-150 cursor-pointer"
         >
-          <Sparkles className="w-4 h-4 text-amber-300" />
+          <RotateCcw className="w-4 h-4 text-amber-300" />
           Play Again
         </button>
       </div>
@@ -150,14 +150,45 @@ export function TurnIndicator({
 
       {/* Springy pulsing turn indicator light */}
       <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-stone-800 border border-stone-700">
-        <span
-          className="w-2.5 h-2.5 rounded-full animate-ping"
-          style={{ backgroundColor: activeColor }}
-        />
-        <span
-          className="w-2 h-2 rounded-full"
-          style={{ backgroundColor: activeColor }}
-        />
+        
+        {/* Left Circle: Player 1 (X) */}
+        {currentPlayer === "X" ? (
+          <span className="relative flex w-2 h-2">
+            <span 
+              className="absolute inline-flex w-full h-full rounded-full animate-ping" 
+              style={{ backgroundColor: activeColor, opacity: 0.75 }} 
+            />
+            <span 
+              className="relative inline-flex w-2 h-2 rounded-full" 
+              style={{ backgroundColor: activeColor }} 
+            />
+          </span>
+        ) : (
+          <span
+            className="w-2 h-2 rounded-full opacity-30"
+            style={{ backgroundColor: "#57534e" }}
+          />
+        )}
+
+        {/* Right Circle: Player 2 (O) */}
+        {currentPlayer === "O" ? (
+          <span className="relative flex w-2 h-2">
+            <span 
+              className="absolute inline-flex w-full h-full rounded-full animate-ping" 
+              style={{ backgroundColor: activeColor, opacity: 0.75 }} 
+            />
+            <span 
+              className="relative inline-flex w-2 h-2 rounded-full" 
+              style={{ backgroundColor: activeColor }} 
+            />
+          </span>
+        ) : (
+          <span
+            className="w-2 h-2 rounded-full opacity-30"
+            style={{ backgroundColor: "#57534e" }}
+          />
+        )}
+
       </div>
     </div>
   );
