@@ -227,5 +227,5 @@ tic-tac-toe-3d/
 ---
 
 <div align="center">
-	<sub>Developed with ❤️ for seamless, empowering financial technology across borders.</sub>
+	<sub>Built for thoughtful strategy, tactile play, and friendly competition.</sub>
 </div>
