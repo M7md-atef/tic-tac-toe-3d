@@ -222,9 +222,10 @@ tic-tac-toe-3d/
 ├── tailwind.config.ts                           # Tailwind theme and content configuration
 ├── tsconfig.json                                # TypeScript compiler configuration
 └── README.md                                    # Project documentation
+```
 
 ---
 
 <div align="center">
-  <sub>Developed with ❤️ for seamless, empowering financial technology across borders.</sub>
+	<sub>Developed with ❤️ for seamless, empowering financial technology across borders.</sub>
 </div>
