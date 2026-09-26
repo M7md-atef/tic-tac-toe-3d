@@ -75,14 +75,69 @@ npm start
 
 ## Project Structure
 
-- `src/app/`: App Router page, root layout, metadata, and global styles.
-- `src/components/`: Shared layout, modal, and feedback UI.
-- `src/constants/`: Theme and color presets.
-- `src/features/customization/`: Settings context, types, and settings modal.
-- `src/features/game/components/`: Board, cells, turn/status, winning-line, and move-history UI.
-- `src/features/game/hooks/`: Match-state and board-tilt hooks.
-- `src/features/game/types/`: Game domain types.
-- `src/features/game/utils/`: Win detection and AI move selection.
-- `src/features/scoreboard/components/`: Scoreboard UI.
-- `src/features/scoreboard/hooks/`: Persistent stats and match-history logic.
-- `src/utils/`: Shared helpers and the Web Audio sound engine.
+```text
+tic-tac-toe-3d/
+├── public/                                      # Static assets served from the site root
+│   ├── file.svg                                 # Default Next.js file illustration
+│   ├── globe.svg                                # Default Next.js globe illustration
+│   ├── next.svg                                 # Next.js logo asset
+│   ├── vercel.svg                               # Vercel logo asset
+│   └── window.svg                               # Default Next.js window illustration
+├── src/
+│   ├── app/
+│   │   ├── favicon.ico                          # Browser tab icon
+│   │   ├── globals.css                          # Global styles, animation, and Tailwind layers
+│   │   ├── layout.tsx                           # Root layout, metadata, and settings provider
+│   │   └── page.tsx                             # Main game screen and feature composition
+│   ├── components/
+│   │   ├── feedback/
+│   │   │   └── Confetti.tsx                     # Win celebration effect
+│   │   ├── layout/
+│   │   │   ├── Footer.tsx                       # Footer and keyboard shortcut hints
+│   │   │   └── Header.tsx                       # Game mode, difficulty, and action controls
+│   │   └── ui/
+│   │       ├── Button.tsx                       # Shared button component
+│   │       └── Modal.tsx                        # Shared modal dialog
+│   ├── constants/
+│   │   └── themes.ts                            # Theme presets and default customization
+│   ├── features/
+│   │   ├── customization/
+│   │   │   ├── components/
+│   │   │   │   └── SettingsModal.tsx            # Theme, token, sound, and tilt controls
+│   │   │   ├── context/
+│   │   │   │   └── SettingsContext.tsx          # Settings state and localStorage persistence
+│   │   │   └── types/
+│   │   │       └── theme.types.ts               # Theme and customization types
+│   │   ├── game/
+│   │   │   ├── components/
+│   │   │   │   ├── Board.tsx                    # Board composition and win effects
+│   │   │   │   ├── HistoryDrawer.tsx            # Recent match history dialog
+│   │   │   │   ├── Square.tsx                   # Interactive board cell and token rendering
+│   │   │   │   ├── TurnIndicator.tsx            # Turn, winner, and draw status
+│   │   │   │   └── WinningLine.tsx              # Winning combination overlay
+│   │   │   ├── hooks/
+│   │   │   │   ├── useBoardTilt.ts              # Pointer-driven CSS board tilt
+│   │   │   │   └── useTicTacToe.ts              # Match state, turns, undo, and AI scheduling
+│   │   │   ├── types/
+│   │   │   │   └── game.types.ts                # Board, player, match, and result types
+│   │   │   └── utils/
+│   │   │       ├── minimax.ts                   # AI strategy and Minimax search
+│   │   │       └── winDetection.ts              # Winning lines and draw detection
+│   │   └── scoreboard/
+│   │       ├── components/
+│   │       │   └── Scoreboard.tsx               # Match statistics display
+│   │       └── hooks/
+│   │           └── useGameStats.ts              # Persistent statistics and match history
+│   └── utils/
+│       ├── cn.ts                                # Conditional class-name helper
+│       └── sound.ts                             # Web Audio sound effects
+├── .eslintrc.json                               # ESLint configuration
+├── .gitignore                                   # Git ignore rules
+├── next-env.d.ts                                # Next.js TypeScript declarations
+├── next.config.mjs                              # Next.js configuration
+├── package.json                                 # Scripts and dependency manifest
+├── package-lock.json                            # Locked npm dependency versions
+├── postcss.config.mjs                           # PostCSS configuration
+├── tailwind.config.ts                           # Tailwind theme and content configuration
+├── tsconfig.json                                # TypeScript compiler configuration
+└── README.md                                    # Project documentation
