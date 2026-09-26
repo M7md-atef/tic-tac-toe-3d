@@ -73,22 +73,6 @@ export function Board({
           <div className="w-1.5 h-0.5 bg-stone-600/70" />
         </div>
 
-        {/* Top Header of the console chassis */}
-        <div className="flex items-center justify-between mb-3 px-3 pointer-events-none">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-            <span className="text-[10px] font-mono font-bold tracking-widest uppercase opacity-75">
-              TACTILE-3D // SYS-01
-            </span>
-          </div>
-          <div className="flex gap-1 opacity-40">
-            <div className="w-1.5 h-1.5 rounded-full bg-black/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-black/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-black/60" />
-            <div className="w-1.5 h-1.5 rounded-full bg-black/60" />
-          </div>
-        </div>
-
         {/* Sunken Arena for the 3×3 Grid */}
         <div className="relative rounded-[2rem] p-3 bg-black/10 shadow-[inset_0_3px_6px_rgba(0,0,0,0.25)] border border-black/10">
           <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5">

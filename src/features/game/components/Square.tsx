@@ -97,7 +97,7 @@ export function Square({
           : "opacity-80 cursor-default",
         // Winning cell bouncy state
         isWinningCell &&
-          "ring-4 ring-amber-400 ring-offset-2 ring-offset-amber-500 scale-105 z-10 animate-bounce"
+          "ring-4 ring-amber-400 ring-offset-2 ring-offset-amber-500 scale-105 z-10"
       )}
     >
       {/* Top subtle highlight */}
